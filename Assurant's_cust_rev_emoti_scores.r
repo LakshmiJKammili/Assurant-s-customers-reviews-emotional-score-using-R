@@ -7,9 +7,9 @@ library(magrittr)
 a<-10
 Assurant_Review<-NULL
 #multi-page
-url <- "https://www.assurant.com/our-story/Assurant-reviews?start=" #base URL without the page number
+url <- "https://www.assurant.com/our-story/Assurant-reviews?start=" 
 url %>% 
-  map2_chr(1:10,paste0) %>% #for building 20 URLs 
+  map2_chr(1:10,paste0) %>% 
   map(. %>% 
         read_html() %>% 
         html_nodes(".section-content") %>% 
